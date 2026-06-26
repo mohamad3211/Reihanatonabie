@@ -5,62 +5,114 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>نذورات - هیئت ریحانة النبی (س)</title>
   <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@100;400;700&display=swap" rel="stylesheet">
-  <style>
-    /* همان استایل‌های مشترک */
-    :root {
-      --bg-dark: #0a0a0a; --bg-card: #161616; --text-main: #e0e0e0; --text-muted: #a0a0a0;
-      --accent-green: #2e7d32; --accent-red: #c62828; --accent-gold: #d4af37; --border-color: #252525;
-    }
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body { font-family: 'Vazirmatn', sans-serif; background-color: var(--bg-dark); color: var(--text-main); line-height: 1.8; }
-    .container { width: min(1100px, 90%); margin: 0 auto; }
-    header { background: rgba(10, 10, 10, 0.9); border-bottom: 1px solid var(--border-color); padding: 15px 0; position: sticky; top: 0; z-index: 1000; }
-    .header-flex { display: flex; justify-content: space-between; align-items: center; }
-    .logo { font-size: 1.4rem; font-weight: 700; color: #fff; }
-    .logo span { color: var(--accent-red); }
-    nav ul { display: flex; list-style: none; gap: 20px; }
-    nav a { text-decoration: none; color: var(--text-muted); font-size: 0.95rem; transition: 0.3s; }
-    nav a:hover, nav a.active { color: var(--accent-green); }
+<style>
+  :root {
+    --bg-dark: #0a0a0a; 
+    --bg-card: #161616; 
+    --text-main: #e0e0e0; 
+    --text-muted: #a0a0a0;
+    --accent-green: #2e7d32; 
+    --accent-red: #c62828; 
+    --border-color: #252525;
+  }
 
-    .content-section { padding: 60px 0; }
-    .donate-card {
-      background: var(--bg-card);
+  * { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+  }
+
+  body { 
+    font-family: 'Vazirmatn', sans-serif; 
+    background-color: var(--bg-dark); 
+    color: var(--text-main); 
+    line-height: 1.8;
+    /* جلوگیری از اسکرول افقی در موبایل */
+    overflow-x: hidden; 
+    width: 100%;
+  }
+
+  /* این بخش جادوی اصلی است: تنظیم عرض کل صفحه */
+  .container { 
+    width: 95%; 
+    max-width: 1100px; 
+    margin: 0 auto; 
+  }
+
+  header { 
+    background: rgba(10, 10, 10, 0.9); 
+    border-bottom: 1px solid var(--border-color); 
+    padding: 15px 0; 
+    position: sticky; 
+    top: 0; 
+    z-index: 1000; 
+  }
+
+  .header-flex { 
+    display: flex; 
+    justify-content: space-between; 
+    align-items: center; 
+  }
+
+  .logo { font-size: 1.2rem; font-weight: 700; color: #fff; }
+  .logo span { color: var(--accent-red); }
+
+  nav ul { 
+    display: flex; 
+    list-style: none; 
+    gap: 15px; 
+  }
+
+  nav a { 
+    text-decoration: none; 
+    color: var(--text-muted); 
+    font-size: 0.85rem; 
+    transition: 0.3s; 
+  }
+
+  nav a:hover, nav a.active { color: var(--accent-green); }
+
+  .content-section { padding: 40px 0; }
+
+  /* اصلاح کارت‌ها برای موبایل */
+  .contact-card, .about-card, .donate-card {
+    background: var(--bg-card);
+    padding: 25px;
+    border-radius: 20px;
+    border-right: 5px solid var(--accent-green);
+    /* جلوگیری از زیر هم رفتن اجباری در موبایل */
+    display: flex;
+    flex-direction: column; 
+    gap: 20px;
+  }
+
+  /* اگر در دسکتاپ می‌خواهید کنار هم باشند، از این استفاده کنید */
+  @media (min-width: 768px) {
+    .contact-card, .about-card, .donate-card {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
       padding: 40px;
-      border-radius: 30px;
-      border-top: 5px solid var(--accent-green); /* خط سبز برای بخش نذورات */
-      text-align: center;
     }
-    .donate-title { font-size: 2.2rem; color: var(--accent-gold); margin-bottom: 20px; }
-    .bank-info {
-      background: rgba(255, 255, 255, 0.05);
-      padding: 25px;
-      border-radius: 15px;
-      margin: 30px 0;
-      border: 1px dashed var(--accent-gold);
-    }
-    .account-row {
-      display: flex;
-      justify-content: space-between;
-      padding: 10px 0;
-      border-bottom: 1px solid #333;
-    }
-    .account-row:last-child { border-bottom: none; }
-    .label { color: var(--accent-green); font-weight: bold; }
-    .number { font-family: monospace; font-size: 1.2rem; letter-spacing: 1px; color: #fff; }
-    
-    .btn-copy {
-      background: var(--accent-red);
-      color: white;
-      border: none;
-      padding: 5px 15px;
-      border-radius: 5px;
-      cursor: pointer;
-      font-family: 'Vazirmatn';
-      font-size: 0.8rem;
-    }
+    .logo { font-size: 1.4rem; }
+    nav a { font-size: 0.95rem; }
+  }
 
-    footer { text-align: center; padding: 40px 0; border-top: 1px solid var(--border-color); color: var(--text-muted); font-size: 0.85rem; }
-  </style>
+  footer { 
+    text-align: center; 
+    padding: 30px 0; 
+    border-top: 1px solid var(--border-color); 
+    color: var(--text-muted); 
+    font-size: 0.8rem; 
+  }
+
+  /* جلوگیری از کوچک شدن بیش از حد المان‌ها در گوشی‌های خیلی کوچک */
+  @media (max-width: 360px) {
+    .logo { font-size: 1rem; }
+    nav ul { gap: 8px; }
+    nav a { font-size: 0.75rem; }
+  }
+</style>
+
 </head>
 <body>
   <header>
