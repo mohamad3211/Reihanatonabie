@@ -5,122 +5,46 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>درباره ما - هیئت ریحانة النبی (س)</title>
   <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@100;400;700&display=swap" rel="stylesheet">
- <style>
-  :root {
-    --bg-dark: #0a0a0a; 
-    --bg-card: #161616; 
-    --text-main: #e0e0e0; 
-    --text-muted: #a0a0a0;
-    --accent-green: #2e7d32; 
-    --accent-red: #c62828; 
-    --border-color: #252525;
-  }
-
-  * { 
-    margin: 0; 
-    padding: 0; 
-    box-sizing: border-box; 
-  }
-
-  body { 
-    font-family: 'Vazirmatn', sans-serif; 
-    background-color: var(--bg-dark); 
-    color: var(--text-main); 
-    line-height: 1.8;
-    /* جلوگیری از اسکرول افقی در موبایل */
-    overflow-x: hidden; 
-    width: 100%;
-  }
-
-  /* این بخش جادوی اصلی است: تنظیم عرض کل صفحه */
-  .container { 
-    width: 95%; 
-    max-width: 1100px; 
-    margin: 0 auto; 
-  }
-
-  header { 
-    background: rgba(10, 10, 10, 0.9); 
-    border-bottom: 1px solid var(--border-color); 
-    padding: 15px 0; 
-    position: sticky; 
-    top: 0; 
-    z-index: 1000; 
-  }
-
-  .header-flex { 
-    display: flex; 
-    justify-content: space-between; 
-    align-items: center; 
-  }
-
-  .logo { font-size: 1.2rem; font-weight: 700; color: #fff; }
-  .logo span { color: var(--accent-red); }
-
-  nav ul { 
-    display: flex; 
-    list-style: none; 
-    gap: 15px; 
-  }
-
-  nav a { 
-    text-decoration: none; 
-    color: var(--text-muted); 
-    font-size: 0.85rem; 
-    transition: 0.3s; 
-  }
-
-  nav a:hover, nav a.active { color: var(--accent-green); }
-
-  .content-section { padding: 40px 0; }
-
-  /* اصلاح کارت‌ها برای موبایل */
-  .contact-card, .about-card, .donate-card {
-    background: var(--bg-card);
-    padding: 25px;
-    border-radius: 20px;
-    border-right: 5px solid var(--accent-green);
-    /* جلوگیری از زیر هم رفتن اجباری در موبایل */
-    display: flex;
-    flex-direction: column; 
-    gap: 20px;
-  }
-
-  /* اگر در دسکتاپ می‌خواهید کنار هم باشند، از این استفاده کنید */
-  @media (min-width: 768px) {
-    .contact-card, .about-card, .donate-card {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      padding: 40px;
+  <style>
+    /* همان استایل‌های صفحه اصلی برای یکپارچگی */
+    :root {
+      --bg-dark: #0a0a0a; --bg-card: #161616; --text-main: #e0e0e0; --text-muted: #a0a0a0;
+      --accent-green: #2e7d32; --accent-red: #c62828; --border-color: #252525;
     }
-    .logo { font-size: 1.4rem; }
-    nav a { font-size: 0.95rem; }
-  }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Vazirmatn', sans-serif; background-color: var(--bg-dark); color: var(--text-main); line-height: 1.8; overflow-x: hidden; }
+    .container { width: 95%; max-width: 1100px; margin: 0 auto; }
+    header { background: rgba(10, 10, 10, 0.9); border-bottom: 1px solid var(--border-color); padding: 15px 0; position: sticky; top: 0; z-index: 1000; }
+    .header-flex { display: flex; justify-content: space-between; align-items: center; }
+    .logo { font-size: 1.2rem; font-weight: 700; color: #fff; }
+    .logo span { color: var(--accent-red); }
+    nav ul { display: flex; list-style: none; gap: 15px; }
+    nav a { text-decoration: none; color: var(--text-muted); font-size: 0.85rem; transition: 0.3s; }
+    nav a:hover, nav a.active { color: var(--accent-green); }
 
-  footer { 
-    text-align: center; 
-    padding: 30px 0; 
-    border-top: 1px solid var(--border-color); 
-    color: var(--text-muted); 
-    font-size: 0.8rem; 
-  }
+    .content-section { padding: 50px 0; }
+    .about-card { background: var(--bg-card); padding: 30px; border-radius: 20px; border-right: 5px solid var(--accent-green); margin-bottom: 30px; }
+    .about-card h2 { color: var(--accent-red); margin-bottom: 20px; }
+    .mission-grid { display: flex; flex-direction: column; gap: 20px; }
+    .mission-item { background: var(--bg-card); padding: 20px; border-radius: 15px; border: 1px solid var(--border-color); }
+    .mission-item h4 { color: var(--accent-green); margin-bottom: 10px; }
 
-  /* جلوگیری از کوچک شدن بیش از حد المان‌ها در گوشی‌های خیلی کوچک */
-  @media (max-width: 360px) {
-    .logo { font-size: 1rem; }
-    nav ul { gap: 8px; }
-    nav a { font-size: 0.75rem; }
-  }
-</style>
+    footer { text-align: center; padding: 30px 0; border-top: 1px solid var(--border-color); color: var(--text-muted); font-size: 0.8rem; }
 
+    @media (min-width: 768px) {
+      .mission-grid { flex-direction: row; }
+      .mission-item { flex: 1; }
+      nav a { font-size: 0.95rem; }
+    }
+  </style>
 </head>
 <body>
   <header>
     <div class="container header-flex">
-      <div class="logo">هیئت ریحانة النبی (س)</div>
+      <div class="logo">هیئت <span class="accent">ریحانة النبی</span> (س)</div>
       <nav>
         <ul>
-          <li><a href="index.html">صفحه اصلی</a></li>
+          <li><a href="index.html">خانه</a></li>
           <li><a href="about.html" class="active">درباره ما</a></li>
           <li><a href="donate.html">نذورات</a></li>
           <li><a href="contact.html">تماس</a></li>
@@ -129,46 +53,31 @@
     </div>
   </header>
 
-  <main class="content-section">
-    <div class="container">
-      <div class="about-card">
-        <h1 class="about-title">درباره هیئت ریحانة النبی (س)</h1>
-        <div class="about-text">
-         <p>هیئت ریحانة النبی (س) با هدف ترویج فرهنگ ولایت و برگزاری محافل ذکر اهل‌بیت (ع) تأسیس شده است. هدف اصلی ما ایجاد فضایی امن و معنوی برای جوانان و خانواده‌ها جهت آشنایی با سیره مطهر پیامبر اکرم (ص) و خاندان پاک ایشان است.
-          خیلی ساده شروع کردیم، با دل‌های پر از ارادت و دستانی که به عشقِ حضرت زهرا (س) به کار مشغول شد. آن روزها شاید باورمان نمی‌شد که مسیری این‌چنین نورانی پیش روی ما گشوده شود.
+  <main class="container content-section">
+    <div class="about-card">
+      <h2>تاریخچه و هدف</h2>
+      <p>هیئت ریحانة النبی (س) با هدف ترویج فرهنگ معارف اهل بیت (ع) و ایجاد بستری برای خدمت به مردم تأسیس شده است. ما بر این باوریم که دین باید در زندگی روزمره مردم جاری باشد.</p>
+    </div>
 
-اما امروز، با هر قدمی که برمی‌داریم، با هر حضوری که داریم، با هر خدمتی که ارائه می‌دهیم، انگار دستِ پرمهرِ مادرمان حضرت زهرا (س) را بر سرِ خود حس می‌کنیم. رسیدن به اینجا، نه حاصل تلاشِ صرفِ ما، که ثمره لطفِ بی‌پایانِ ایشان و دعای خیرِ یکایکِ شما خوبان بوده است.
-
-هرچه داریم، از اوست و هرچه پیش رو داریم، به مددِ مادرمان حضرت زهرا خواهد بود. این راهِ خدمت، راهِ عشق است و ما مفتخریم که خاکِ راهِ بانوی دو عالمیم. ❤️✨
-
-ما بچه‌های مادرِ پهلوشکسته‌ایم
-
-از جفا نرنجد دل، ما اهلِ وفاییم»
-         </p>
-
-        </div>
-
-        <div class="mission-grid">
-          <div class="mission-item">
-            <h4>ارتقای معنوی</h4>
-            <p>برگزاری مراسم‌های مذهبی منظم با حضور سخنرانان برجسته.</p>
-          </div>
-          <div class="mission-item">
-            <h4>خدمات اجتماعی</h4>
-            <p>مشارکت در امور خیریه و کمک به نیازمندان تحت پوشش.</p>
-          </div>
-          <div class="mission-item">
-            <h4>آموزش جوانان</h4>
-            <p>ایجاد بسترهای فرهنگی برای جذب و هدایت نسل جوان.</p>
-          </div>
-        </div>
+    <div class="mission-grid">
+      <div class="mission-item">
+        <h4>ارتقای معنوی</h4>
+        <p>برگزاری کلاس‌های آموزشی و مجالس ترویج دین.</p>
+      </div>
+      <div class="mission-item">
+        <h4>خدمات اجتماعی</h4>
+        <p>کمک به نیازمندان و فعالیت‌های خیرخواهانه در جامعه.</p>
+      </div>
+      <div class="mission-item">
+        <h4>آموزش جوانان</h4>
+        <p>تمرکز بر تربیت نسل جدید بر اساس الگوی اسلامی.</p>
       </div>
     </div>
   </main>
 
   <footer>
     <div class="container">
-      <p>@Reihanatonabie_ir | ©  تمامی حقوق محفوظ است.</p>
+      <p>© ۱۴۰۳ تمامی حقوق برای هیئت ریحانة النبی محفوظ است.</p>
     </div>
   </footer>
 </body>
