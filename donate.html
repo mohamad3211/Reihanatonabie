@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>نذورات - هیئت ریحانة النبی (س)</title>
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@100;400;700&display=swap" rel="stylesheet">
+  <style>
+    /* همان استایل‌های مشترک */
+    :root {
+      --bg-dark: #0a0a0a; --bg-card: #161616; --text-main: #e0e0e0; --text-muted: #a0a0a0;
+      --accent-green: #2e7d32; --accent-red: #c62828; --accent-gold: #d4af37; --border-color: #252525;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Vazirmatn', sans-serif; background-color: var(--bg-dark); color: var(--text-main); line-height: 1.8; }
+    .container { width: min(1100px, 90%); margin: 0 auto; }
+    header { background: rgba(10, 10, 10, 0.9); border-bottom: 1px solid var(--border-color); padding: 15px 0; position: sticky; top: 0; z-index: 1000; }
+    .header-flex { display: flex; justify-content: space-between; align-items: center; }
+    .logo { font-size: 1.4rem; font-weight: 700; color: #fff; }
+    .logo span { color: var(--accent-red); }
+    nav ul { display: flex; list-style: none; gap: 20px; }
+    nav a { text-decoration: none; color: var(--text-muted); font-size: 0.95rem; transition: 0.3s; }
+    nav a:hover, nav a.active { color: var(--accent-green); }
+
+    .content-section { padding: 60px 0; }
+    .donate-card {
+      background: var(--bg-card);
+      padding: 40px;
+      border-radius: 30px;
+      border-top: 5px solid var(--accent-green); /* خط سبز برای بخش نذورات */
+      text-align: center;
+    }
+    .donate-title { font-size: 2.2rem; color: var(--accent-gold); margin-bottom: 20px; }
+    .bank-info {
+      background: rgba(255, 255, 255, 0.05);
+      padding: 25px;
+      border-radius: 15px;
+      margin: 30px 0;
+      border: 1px dashed var(--accent-gold);
+    }
+    .account-row {
+      display: flex;
+      justify-content: space-between;
+      padding: 10px 0;
+      border-bottom: 1px solid #333;
+    }
+    .account-row:last-child { border-bottom: none; }
+    .label { color: var(--accent-green); font-weight: bold; }
+    .number { font-family: monospace; font-size: 1.2rem; letter-spacing: 1px; color: #fff; }
+    
+    .btn-copy {
+      background: var(--accent-red);
+      color: white;
+      border: none;
+      padding: 5px 15px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-family: 'Vazirmatn';
+      font-size: 0.8rem;
+    }
+
+    footer { text-align: center; padding: 40px 0; border-top: 1px solid var(--border-color); color: var(--text-muted); font-size: 0.85rem; }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container header-flex">
+      <div class="logo">هیئت ریحانة النبی (س)</div>
+      <nav>
+        <ul>
+          <li><a href="index.html">صفحه اصلی</a></li>
+          <li><a href="about.html">درباره ما</a></li>
+          <li><a href="donate.html" class="active">نذورات</a></li>
+          <li><a href="contact.html">تماس</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="content-section">
+    <div class="container">
+      <div class="donate-card">
+        <h1 class="donate-title">مشارکت در امور هیئت</h1>
+        <p>با نذورات خود در مسیر خدمت به اهل‌بیت (ع) گام بردارید.</p>
+
+        <div class="bank-info">
+          <div class="account-row">
+            <span class="label">نام بانک:</span>
+            <span>بانک رفاه</span>
+          </div>
+          <div class="account-row">
+            <span class="label">شماره کارت:</span>
+            <span class="number">5894-6315-4984-6392</span>
+          </div>
+          <div class="account-row">
+            <span class="label">به نام :</span>
+            <span class="number">محمد طاهر ترکمنی</span>
+          </div>
+        </div>
+
+        <p style="color: var(--text-muted); font-size: 0.9rem;">* پس از واریز، لطفاً رسید خود را در ایتا به ادمین کانال ارسال فرمایید.</p>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>@Reihanatonabie_ir | ©  تمامی حقوق محفوظ است.</p>
+    </div>
+  </footer>
+</body>
+</html>

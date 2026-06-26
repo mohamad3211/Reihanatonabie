@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>هیئت ریحانة النبی (س) - صفحه اصلی</title>
+  <!-- استفاده از فونت Vazirmatn برای نرمی و زیبایی بیشتر -->
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@100;400;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-dark: #0a0a0a;
+      --bg-card: #161616;
+      --text-main: #e0e0e0;
+      --text-muted: #a0a0a0;
+      --accent-green: #2e7d32; /* سبز مذهبی نرم */
+      --accent-red: #c62828;   /* قرمز تاکید */
+      --accent-gold: #d4af37;
+      --border-color: #252525;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Vazirmatn', sans-serif;
+      background-color: var(--bg-dark);
+      color: var(--text-main);
+      line-height: 1.8;
+    }
+
+    .container {
+      width: min(1100px, 90%);
+      margin: 0 auto;
+    }
+
+    /* Header */
+    header {
+      background: rgba(10, 10, 10, 0.9);
+      border-bottom: 1px solid var(--border-color);
+      padding: 15px 0;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    .header-flex {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: #fff;
+    }
+
+    .logo span {
+      color: var(--accent-red);
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 20px;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: var(--text-muted);
+      font-size: 0.95rem;
+      transition: 0.3s;
+    }
+
+    nav a:hover, nav a.active {
+      color: var(--accent-green);
+    }
+
+    /* Hero Section */
+    .hero {
+      padding: 60px 0;
+    }
+
+    .hero-content {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .hero-text {
+      background: var(--bg-card);
+      padding: 40px;
+      border-radius: 30px;
+      border-right: 5px solid var(--accent-red); /* خط قرمز بالای بخش */
+      box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+    }
+
+    .hero-title {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+      color: #fff;
+    }
+
+    .hero-title span {
+      color: var(--accent-green);
+    }
+
+    .hero-subtitle {
+      font-size: 1.2rem;
+      color: var(--text-muted);
+      margin-bottom: 30px;
+    }
+
+    /* Info Box */
+    .contact-info {
+      background: rgba(46, 125, 50, 0.05); /* پس‌زمینه بسیار کمرنگ سبز */
+      border: 1px solid rgba(46, 125, 50, 0.2);
+      padding: 20px;
+      border-radius: 15px;
+      margin-bottom: 25px;
+    }
+
+    .info-row {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 10px;
+      font-size: 0.95rem;
+    }
+
+    .info-label {
+      color: var(--accent-gold);
+      font-weight: 700;
+    }
+
+    /* Links */
+    .social-links {
+      display: flex;
+      gap: 15px;
+    }
+
+    .btn-link {
+      padding: 8px 20px;
+      border-radius: 10px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 0.9rem;
+      transition: 0.3s;
+    }
+
+    .eita-btn {
+      background: var(--accent-green);
+      color: white;
+    }
+
+    .eita-btn:hover {
+      background: #1b5e20;
+    }
+
+    /* Image Section */
+    .hero-image {
+      text-align: center;
+    }
+
+    .hero-image img {
+      width: 100%;
+      max-width: 400px;
+      border-radius: 20px;
+      border: 2px solid var(--border-color);
+      box-shadow: 0 15px 30px rgba(0,0,0,0.4);
+    }
+
+    /* Cards Section */
+    .cards-section {
+      padding: 50px 0;
+    }
+
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 25px;
+    }
+
+    .card {
+      background: var(--bg-card);
+      padding: 30px;
+      border-radius: 20px;
+      border: 1px solid var(--border-color);
+      transition: 0.3s;
+    }
+
+    .card:hover {
+      border-color: var(--accent-green);
+      transform: translateY(-5px);
+    }
+
+    .card h3 {
+      color: var(--accent-green);
+      margin-bottom: 15px;
+    }
+
+    .card p {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+    }
+
+    /* Footer */
+    footer {
+      text-align: center;
+      padding: 40px 0;
+      border-top: 1px solid var(--border-color);
+      color: var(--text-muted);
+      font-size: 0.85rem;
+    }
+
+    /* Responsive */
+    @media (max-width: 768px) {
+      .hero-content {
+        grid-template-columns: 1fr;
+      }
+      .header-flex {
+        flex-direction: column;
+        gap: 15px;
+      }
+      .hero-title {
+        font-size: 1.8rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="container header-flex">
+      <div class="logo">هیئت ریحانة النبی (س)</div>
+      <nav>
+        <ul>
+          <li><a href="index.html" class="active">صفحه اصلی</a></li>
+          <li><a href="about.html">درباره ما</a></li>
+          <li><a href="donate.html">نذورات</a></li>
+          <li><a href="contact.html">تماس</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-content">
+        
+        <div class="hero-text">
+          <h1 class="hero-title">هیئت <span>ریحانة النبی</span> (س)</h1>
+          <p class="hero-subtitle">متوسلین به حضرت زهرا (س) — برنامه‌ها: شنبه‌ها</p>
+          
+          <div class="contact-info">
+            <div class="info-row">
+              <span class="info-label">📍 آدرس:</span>
+              <span>مسجد علی بن موسی الرضا بین میعاد 7 و 9</span>
+            </div>
+            <div class="info-row">
+              <span class="info-label">📅 زمان:</span>
+              <span>شنبه شب‌ها</span>
+            </div>
+            <div class="info-row">
+              <span class="info-label">🆔 ایتا:</span>
+              <span>Reihanatonabie@</span>
+            </div>
+          </div>
+
+          <div class="social-links">
+            <a href="https://eitaa.com/Reihanatonabie" class="btn-link eita-btn">کانال ایتا</a>
+            <!-- لینک سایت طبق درخواست قبلی در اینجا قرار می‌گیرد -->
+            <a href="#" class="btn-link" style="color: var(--accent-gold); border: 1px solid var(--accent-gold);">سایت رسمی</a>
+          </div>
+        </div>
+
+        <div class="hero-image">
+          <!-- استفاده از تصویر کاربر -->
+          <img src="img/عادی پوستر.jpg" alt="پوستر هیئت">
+        </div>
+
+      </div>
+    </section>
+
+    <section class="cards-section">
+      <div class="container">
+        <div class="cards-grid">
+          <div class="card">
+            <h3>نذورات</h3>
+            <p> در برگزاری مراسم و خدمات هیئت مشارکت کنید.</p>
+          </div>
+          <div class="card">
+            <h3>درباره هیئت</h3>
+            <p>محفلی برای ذکر اهل‌بیت (ع) و ترویج فرهنگ اسلامی.</p>
+          </div>
+          <div class="card">
+            <h3>ارتباط با ما</h3>
+            <p>از طریق ایتا یا مراجعه حضوری با ما در ارتباط باشید.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>@Reihanatonabie_ir © تمامی حقوق محفوظ است.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
